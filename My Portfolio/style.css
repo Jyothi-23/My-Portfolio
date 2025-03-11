@@ -15,16 +15,17 @@ body {
   overflow: hidden;
 }
 
-/* Front Page */
+/* Front Page and About Me Combined */
 .front-page {
-  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #2a2a2a, #1a1a1a); /* Gradient background */
   text-align: center;
   position: relative;
   overflow: hidden;
+  padding: 60px 0; /* Add padding to ensure content is centered */
 }
 
 /* Dynamic Background Animation */
@@ -35,7 +36,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(255, 99, 71, 0.1) 10%, transparent 10.01%);
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 10%, transparent 10.01%);
   background-size: 20px 20px;
   animation: moveBackground 10s linear infinite;
   z-index: 1;
@@ -53,12 +54,13 @@ body {
 .name-container {
   position: relative;
   z-index: 2;
+  margin-bottom: 40px; /* Space between name and about section */
 }
 
 .name-container h1 {
   font-size: 4rem;
   font-weight: bold;
-  color: #ff6347; /* Coral accent color */
+  color: #8a2be2; /* Violet accent color */
   margin-bottom: 10px;
   animation: glow 2s infinite;
 }
@@ -85,6 +87,13 @@ body {
   }
 }
 
+/* Glow Animation for Heading */
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2; }
+  50% { text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2; }
+  100% { text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2; }
+}
+
 /* Social Media Links */
 .social-links {
   display: flex;
@@ -100,7 +109,7 @@ body {
 }
 
 .social-links a:hover {
-  color: #ff6347; /* Coral accent color */
+  color: #8a2be2; /* Violet accent color */
   transform: translateY(-5px);
 }
 
@@ -108,7 +117,7 @@ body {
 .scroll-down-button {
   margin-top: 20px;
   padding: 10px 20px;
-  background: #ff6347;
+  background: #8a2be2; /* Violet accent color */
   color: white;
   border-radius: 5px;
   text-decoration: none;
@@ -117,16 +126,59 @@ body {
 }
 
 .scroll-down-button:hover {
-  background-color: #e5533d; /* Darker coral on hover */
+  background-color: #7b1fa2; /* Darker violet on hover */
   transform: translateY(-3px);
 }
 
-/* Glow Animation for Heading */
-@keyframes glow {
-  0% { text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347; }
-  50% { text-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347; }
-  100% { text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347; }
+/* About Section */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  background: #2a2a2a; /* Slightly lighter dark background */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center the about section */
+  max-width: 1200px; /* Match container width */
 }
+
+.about-text {
+  flex: 1;
+  min-width: 350px;
+  max-width: 600px;
+  font-size: 1.2rem;
+  color: #cccccc;
+  text-align: left;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  border-radius: 50%;
+  border: 5px solid #8a2be2; /* Violet accent color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
 /* Navigation Bar */
 nav {
   display: flex;
@@ -159,12 +211,12 @@ nav {
 }
 
 .nav-links a:hover {
-  background: #ff6347; /* Coral accent color */
+  background: #8a2be2; /* Violet accent color */
   transform: translateY(-3px);
 }
 
 .resume-button {
- 
+  background: #8a2be2; /* Violet accent color */
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -173,7 +225,7 @@ nav {
 }
 
 .resume-button:hover {
-  background-color: #e5533d; /* Darker coral on hover */
+  background-color: #7b1fa2; /* Darker violet on hover */
 }
 
 /* Sections */
@@ -188,66 +240,21 @@ nav {
 .section h1 {
   text-align: center;
   font-size: 2.5rem;
-  color: #ff6347; /* Coral accent color */
+  color: #8a2be2; /* Violet accent color */
   margin-bottom: 30px;
 }
 
 .section h2 {
-  text-align: center; /* Center the heading */
+  text-align: center;
   font-size: 1.8rem;
-  color: #ff6347; /* Coral accent color */
+  color: #8a2be2; /* Violet accent color */
   margin-bottom: 10px;
-  
   text-underline-offset: 8px;
 }
 
 .section p {
   text-align: left;
   color: #cccccc; /* Light gray for text */
-}
-
-/* About Section */
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  padding: 20px;
-  align-items: center; /* Align items vertically in the center */
-  justify-content: center; /* Center the content horizontally */
-}
-
-.about-text {
-  flex: 1;
-  min-width: 350px;
-  max-width: 600px; /* Limit text width for better readability */
-  font-size: 1.2rem;
-  color: #cccccc; /* Light gray for text */
-  text-align: left; /* Align text to the left */
-}
-
-.about-image {
-  flex: 1;
-  min-width: 300px;
-  max-width: 300px; /* Fixed width for the image */
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Center the image vertically */
-}
-
-.profile-img {
-  width: 100%; /* Make the image responsive */
-  height: auto;
-  max-width: 250px; /* Limit image size */
-  border-radius: 50%;
-  border: 5px solid #ff6347; /* Coral accent color */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
 }
 
 /* Certifications Section */
@@ -274,14 +281,14 @@ nav {
 
 .certification h3 {
   font-size: 1.5rem;
-  color: #ff6347; /* Coral accent color */
+  color: #8a2be2; /* Violet accent color */
   margin-bottom: 10px;
 }
 
 .certification p {
   font-size: 1rem;
-  color: #cccccc; /* Light gray for text */
-  text-align:center;
+  color: #cccccc;
+  text-align: center;
 }
 
 /* Skills Section */
@@ -309,12 +316,12 @@ nav {
 .skill i {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #ff6347; /* Coral accent color */
+  color: #8a2be2; /* Violet accent color */
 }
 
 .skill p {
   font-size: 1rem;
-  color: #cccccc; /* Light gray for text */
+  color: #cccccc;
 }
 
 /* Projects Section */
@@ -340,13 +347,13 @@ nav {
 
 .project h3 {
   font-size: 1.5rem;
-  color: #ff6347; /* Coral accent color */
+  color: #8a2be2; /* Violet accent color */
   margin-bottom: 10px;
 }
 
 .project p {
   font-size: 1rem;
-  color: #cccccc; /* Light gray for text */
+  color: #cccccc;
 }
 
 /* Contact Section */
@@ -357,7 +364,7 @@ nav {
   margin: 10px 0;
   font-size: 1rem;
   color: #222;
-  border: 2px solid #ff6347; /* Coral accent color */
+  border: 2px solid #8a2be2; /* Violet accent color */
   background: rgba(255, 255, 255, 0.9);
   border-radius: 5px;
   transition: border-color 0.3s ease;
@@ -365,11 +372,11 @@ nav {
 
 #contact-form input:focus,
 #contact-form textarea:focus {
-  border-color: #e5533d; /* Darker coral on focus */
+  border-color: #7b1fa2; /* Darker violet on focus */
 }
 
 #contact-form button {
-  background: #ff6347; /* Coral accent color */
+  background: #8a2be2; /* Violet accent color */
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -379,7 +386,7 @@ nav {
 }
 
 #contact-form button:hover {
-  background: #e5533d; /* Darker coral on hover */
+  background: #7b1fa2; /* Darker violet on hover */
 }
 
 /* Footer */
